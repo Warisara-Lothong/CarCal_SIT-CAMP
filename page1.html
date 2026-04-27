@@ -1,96 +1,87 @@
 <!DOCTYPE html>
 <html lang="th">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EV Calculator</title>
-    <link href="https://fonts.googleapis.com/css2?family=Kanit&display=swap" rel="stylesheet">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fuel Calculator</title>
 
-        tailwind.config = {
+  <link href="https://fonts.googleapis.com/css2?family=Kanit&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
 
-            theme: {
-
-                extend: {
-
-                    fontFamily: {
-
-                        kanit: ['Kanit', 'sans-serif'],
-
-                    }
-
-                }
-
-            }
-
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            kanit: ['Kanit', 'sans-serif'],
+          }
         }
-    </script>
-    <style>
-        input::-webkit-outer-spin-button,
+      }
+    }
+  </script>
 
-        input::-webkit-inner-spin-button {
+  <style>
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+    input[type=number] {
+      -moz-appearance: textfield;
+    }
+  </style>
 
-            -webkit-appearance: none;
-
-            margin: 0;
-
-        }
-
-        input[type=number] {
-
-            -moz-appearance: textfield;
-
-        }
-    </style>
-    <script src="carcal.js"></script>
+  <script src="carcal.js"></script>
 </head>
 
 <body class="bg-gradient-to-br from-[#016064] to-[#88bcc1] min-h-screen flex items-center justify-center px-4">
-    <!-- card -->
-    <div class="w-full max-w-md md:max-w-lg bg-white p-6 md:p-10 rounded-xl shadow-xl flex flex-col gap-6">
-        <!-- title -->
-        <h1 class="text-center text-xl md:text-2xl font-kanit font-semibold text-white 
 
+  <!-- card -->
+  <div class="w-full max-w-md md:max-w-lg bg-white p-6 md:p-10 rounded-xl shadow-xl flex flex-col gap-6">
+
+    <!-- title -->
+    <h1 class="text-center text-xl md:text-2xl font-kanit font-semibold text-white 
                bg-gradient-to-r from-[#016064] to-[#88bcc1] py-3 rounded-full shadow">
+      คำนวณค่าน้ำมัน
+    </h1>
 
-            ค่าชาร์จรถไฟฟ้า
-        </h1>
-        <!-- select -->
-        <select id="chargeType"
-            class="w-full rounded-md px-3 py-2 text-base md:text-lg font-kanit border focus:ring-2 focus:ring-[#016064]">
-            <option value="" disabled selected>ประเภทที่ชาร์จ</option>
-            <option value="4.5">AC (บ้าน)</option>
-            <option value="7">DC Fast</option>
-            <option value="10">DC Ultra</option>
-        </select>
-        <!-- inputs -->
-        <input type="number" id="battery" placeholder="ขนาดแบตเตอรี่ (kWh)" class="w-full p-2 md:p-3 border rounded-md">
-        <input type="number" id="current" placeholder="แบตปัจจุบัน (%)" class="w-full p-2 md:p-3 border rounded-md">
-        <input type="number" id="target" placeholder="ต้องการชาร์จ (%)" class="w-full p-2 md:p-3 border rounded-md">
-        <!-- button -->
-        <button onclick="carcalEV()" class="w-full md:w-auto bg-gradient-to-r from-[#016064] to-[#88bcc1]
+    <!-- select -->
+    <select id="fuel"
+      class="w-full rounded-md px-3 py-2 text-base md:text-lg font-kanit border focus:ring-2 focus:ring-[#016064]">
+      <option value="" disabled selected>ประเภทน้ำมันที่ใช้</option>
+      <option value="42.45">GASOHOL 95</option>
+      <option value="42.08">GASOHOL 91</option>
+      <option value="35.45">GASOHOL E20</option>
+      <option value="52.04">BENZINE</option>
+      <option value="40.20">DIESEL</option>
+    </select>
 
-             hover:from-[#88bcc1] hover:to-[#016064]
+    <!-- input -->
+    <input type="number" id="distance" placeholder="กรอกระยะทาง (กม.)"
+      class="w-full p-2 md:p-3 border rounded-md">
 
-             text-white font-semibold py-3 rounded-xl shadow-lg
-
+    <!-- button -->
+    <button onclick="carcalFuel()"
+      class="w-full md:w-auto bg-gradient-to-r from-emerald-500 to-lime-200
+             hover:from-lime-300 hover:to-emerald-600
+             text-teal-800 font-semibold py-3 rounded-xl shadow-lg
              transition-all duration-300">
+      calculate
+    </button>
 
-            calculate
-        </button>
-        <!-- result -->
-        <p id="result" class="hidden text-center bg-gradient-to-t from-orange-400 to-amber-200
-
+    <!-- result -->
+    <p id="result"
+      class="hidden text-center bg-gradient-to-t from-orange-400 to-amber-200
              font-bold px-3 py-2 text-lg rounded-xl">
-        </p>
-        <!-- back -->
-        <a href="index.html" class="text-center underline text-black hover:text-red-500 mt-4">
+    </p>
 
-            ← Go back
-        </a>
-    </div>
+    <!-- back -->
+    <a href="index.html"
+      class="text-center underline text-black hover:text-red-500 mt-4">
+      ← Go back
+    </a>
+
+  </div>
+
 </body>
-
 </html>
