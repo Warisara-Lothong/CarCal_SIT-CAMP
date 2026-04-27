@@ -1,33 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
- 
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <!-- <link rel="stylesheet" href="style.css"> -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        kanit: ['Kanit', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
     <script src="carcal.js"></script>
 </head>
- 
+
 <body>
-    <div id="box" class="flex flex-col border border-black-500 px-96 py-10 gap-10 bg-blue-300 h-screen">
-        <h1 class="text-center border rounded-xl bg-blue-200">ค่าน้ำมัน</h1>
-        <select name="" id="fuel" class="border rounded-l">
-            <option value="" disabled selected>type</option>
-            <option value="42.45">GASSOHOL 95(42.45 บาท/ลิตร) </option>
-            <option value="42.08">GASSOHOL 91(42. 08บาท/ลิตร) </option>
-            <option value="35.45">GASSOHOL E20(35.45 บาท/ลิตร)</option>
-            <option value="52.04">BENZINE(52.04 บาท/ลิตร)</option>
-            <option value="40.20">DIESEL(40.20 บาท/ลิตร)</option>
-        </select>
-        <input type="number" id="distance" placeholder="กรอกระยะทาง(กม.)" class="border rounded-l">
-        <button onclick="carcal()" class="border border-zinc-200 bg-green-100 rounded-xl">
-            calculate
-        </button>
-        <p id="result" class="text-center bg-green-100 font-bold"></p>
+    <div id="box" class="flex flex-col px-96 py-10  bg-white h-screen ">
+        <div class="flex flex-col gap-10 mt-10 bg-sky-100 p-10 rounded-xl shadow-xl">
+            <h1
+                class="text-center border rounded-full  text-white bg-gradient-to-tl from-[#016064] to-[#88bcc1] mx-60 font-semibold pt-5 py-5 text-2xl  font-kanit text-cyan-800 shadow-xl ">
+                คำนวณค่าน้ำมัน</h1>
+            <select name="" id="fuel"
+                class="rounded-md bg-white px-3 py-2 text-xl font-kanit text-gray-900 shadow-xs inset-ring-1 inset-ring-gray-300 hover:bg-gray-50">
+                <option value="" disabled selected>ประเภทน้ำมันที่ใช้</option>
+                <option value="42.45">GASSOHOL 95(42.45 บาท/ลิตร) </option>
+                <option value="42.08">GASSOHOL 91(42. 08บาท/ลิตร) </option>
+                <option value="35.45">GASSOHOL E20(35.45 บาท/ลิตร)</option>
+                <option value="52.04">BENZINE(52.04 บาท/ลิตร)</option>
+                <option value="40.20">DIESEL(40.20 บาท/ลิตร)</option>
+            </select>
+            <input type="number" id="distance" placeholder="กรอกระยะทาง (กม.)"
+                class="rounded-md bg-white px-3 py-2 text-xl  text-gray-900 shadow-xs inset-ring-1 inset-ring-gray-300 hover:bg-gray-50 font-kanit">
+            <button onclick="carcal()"
+                class="bg-gradient-to-t from-emerald-500 to-lime-200 rounded-xl shadow-xl font-bold mx-[280px] p-3 text-teal-700 hover:bg-gradient-to-t hover:from-gray-500 hover:to-white hover:text-black">
+                calculate
+            </button>
+            <p id="result" class="hidden text-center bg-gradient-to-t from-orange-400 to-amber-200 font-bold px-3 py-2 text-xl rounded-b-xl ">
+            </p>
+        </div>
     </div>
- 
+
+
 </body>
- 
+
 </html>

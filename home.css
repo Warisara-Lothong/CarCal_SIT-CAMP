@@ -1,0 +1,80 @@
+.navbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-family: "Kanit", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    background-color: #88bcc1;
+ 
+}
+.img {
+    display: flex;
+    justify-content: center;
+    background: linear-gradient(#016064, #88bcc1)
+}
+.header {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    font-family: "Kanit", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: x-large;
+    margin-bottom: 1px;
+}
+ 
+.header h1 {
+    margin-bottom: 1px;
+}
+.header p {
+    margin-top: 1px;
+}
+.button-parent {
+    color: white;
+    gap: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding-top: 10px;
+    border-radius: 20px;
+    font-family: "Kanit", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    margin-bottom: 20px;
+    margin-top: 1px;
+}
+ 
+button {
+    font-size: x-large;
+    color: white;
+    background-color: #002A2F;
+    border-radius: 10px;
+    font-family: "Kanit", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    padding: 15px;
+}
+ 
+button a {
+    color: rgb(255, 255, 255);
+}
+ 
+.navbar button {
+    margin: 15PX; }
+ 
+.logo a {
+    margin: 15px;
+    text-decoration: none ;
+    color: #002A2F;
+}
+ 
+@media (max-width: 500px) {
+    .button-parent{
+        flex-direction: column;
+    }
+}
+ 
+
+ 
+ 

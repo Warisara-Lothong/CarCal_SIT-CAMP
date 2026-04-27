@@ -6,6 +6,7 @@
 function carcal() {
   const fuelPrice = parseFloat(document.getElementById("fuel").value);
   const distance = parseFloat(document.getElementById("distance").value);
+  document.getElementById("result").classList.remove("hidden")
  
   if (!fuelPrice || !distance) {
     alert("กรอกข้อมูลให้ครบ");
