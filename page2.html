@@ -41,23 +41,25 @@
 
 <body>
     <div id="box" class="flex flex-col px-96 py-10  bg-white h-screen ">
-
         <div class="flex flex-col gap-10 mt-10 bg-sky-100 p-10 rounded-xl shadow-xl">
             <h1
-                class="text-center border rounded-full  text-white bg-gradient-to-tl from-[#016064] to-[#88bcc1] mx-60 font-semibold pt-5 py-5 text-2xl  font-kanit text-cyan-800 shadow-xl ">
-                คำนวณค่าน้ำมัน</h1>
-            <select name="" id="fuel"
+                class="text-center border rounded-full  text-white bg-gradient-to-tl from-[#016064] to-[#88bcc1] mx-[200px] font-semibold pt-5 py-5 text-2xl  font-kanit text-cyan-800 shadow-xl ">
+                ค่าชาร์จรถไฟฟ้า</h1>
+            <select name="" id="chargeType"
                 class="rounded-md bg-white px-3 py-2 text-xl font-kanit text-gray-900 shadow-xs inset-ring-1 inset-ring-gray-300 hover:bg-gray-50">
-                <option value="" disabled selected>ประเภทน้ำมันที่ใช้</option>
-                <option value="42.45">GASSOHOL 95(42.45 บาท/ลิตร) </option>
-                <option value="42.08">GASSOHOL 91(42. 08บาท/ลิตร) </option>
-                <option value="35.45">GASSOHOL E20(35.45 บาท/ลิตร)</option>
-                <option value="52.04">BENZINE(52.04 บาท/ลิตร)</option>
-                <option value="40.20">DIESEL(40.20 บาท/ลิตร)</option>
+                <option value="" disabled selected>ประเภทที่ชาร์จ</option>
+                <option value="4.5">AC (ชาร์จที่บ้าน 4.5 บาท/kWh) </option>
+                <option value="7">DC FAST CHARGE (ชาร์จที่สถานีชาร์จ 7 บาท/kWh) </option>
+                <option value="10">DC ULTRA (ชาร์จที่สถานีชาร์จ 10 บาท/kWh)</option>
             </select>
-            <input type="number" id="distance" placeholder="กรอกระยะทาง (กม.)"
+            <input type="number" id="battery" placeholder="ขนาดแบตเตอรี่ (kWh)"
                 class="rounded-md bg-white px-3 py-2 text-xl  text-gray-900 shadow-xs inset-ring-1 inset-ring-gray-300 hover:bg-gray-50 font-kanit">
-            <button onclick="carcalFuel()"
+            <input type="number" id="current" placeholder="เปอร์เซ็นต์แบตเตอรี่ปัจจุบัน (%)"
+                class="rounded-md bg-white px-3 py-2 text-xl  text-gray-900 shadow-xs inset-ring-1 inset-ring-gray-300 hover:bg-gray-50 font-kanit"
+                min="0" max="100">
+            <input type="number" id="target" placeholder="เปอร์เซ็นต์ที่ต้องการชาร์จ (%)"
+                class="rounded-md bg-white px-3 py-2 text-xl  text-gray-900 shadow-xs inset-ring-1 inset-ring-gray-300 hover:bg-gray-50 font-kanit">
+            <button onclick="carcalEV()"
                 class="bg-gradient-to-t from-emerald-500 to-lime-200 rounded-xl shadow-xl font-bold mx-[280px] p-3 text-teal-700 hover:bg-gradient-to-t hover:from-gray-500 hover:to-white hover:text-black">
                 calculate
             </button>
